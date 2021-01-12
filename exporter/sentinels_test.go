@@ -1,13 +1,5 @@
 package exporter
 
-/*
-  to run the tests with redis running on anything but localhost:6379 use
-  $ go test   --redis.addr=<host>:<port>
-
-  for html coverage report run
-  $ go test -coverprofile=coverage.out  && go tool cover -html=coverage.out
-*/
-
 import (
 	"fmt"
 	"os"

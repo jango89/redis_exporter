@@ -1,13 +1,14 @@
 package exporter
 
 import (
-	"github.com/prometheus/client_golang/prometheus"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
 	"os"
 	"strings"
 	"testing"
+
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 func TestLoadPwdFile(t *testing.T) {

@@ -120,7 +120,6 @@ func setupSlowLog(t *testing.T, addr string) error {
 }
 
 func resetSlowLog(t *testing.T, addr string) error {
-
 	c, err := redis.DialURL(addr)
 	if err != nil {
 		t.Errorf("couldn't setup redis, err: %s ", err)

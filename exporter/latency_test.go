@@ -60,7 +60,6 @@ func TestLatencySpike(t *testing.T) {
 }
 
 func setupLatency(t *testing.T, addr string) error {
-
 	c, err := redis.DialURL(addr)
 	if err != nil {
 		t.Errorf("couldn't setup redis, err: %s ", err)
@@ -88,7 +87,6 @@ func setupLatency(t *testing.T, addr string) error {
 }
 
 func resetLatency(t *testing.T, addr string) error {
-
 	c, err := redis.DialURL(addr)
 	if err != nil {
 		t.Errorf("couldn't setup redis, err: %s ", err)
