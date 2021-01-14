@@ -50,7 +50,7 @@ func (e *Exporter) extractInfoMetrics(ch chan<- prometheus.Metric, info string, 
 		fieldValue := split[1]
 
 		var (
-			instanceInfoFields = map[string]bool{"role": true, "redis_version": true, "redis_build_id": true, "redis_mode": true, "os": true, "maxmemory_policy": true}
+			instanceInfoFields = map[string]bool{"role": true, "redis_version": true, "redis_build_id": true, "redis_mode": true, "os": true, "maxmemory_policy": true, "tcp_port": true, "run_id": true, "process_id": true}
 			slaveInfoFields    = map[string]bool{"master_host": true, "master_port": true, "slave_read_only": true}
 		)
 
@@ -125,7 +125,9 @@ func (e *Exporter) extractInfoMetrics(ch chan<- prometheus.Metric, info string, 
 		instanceInfo["redis_build_id"],
 		instanceInfo["redis_mode"],
 		instanceInfo["os"],
-		instanceInfo["maxmemory_policy"])
+		instanceInfo["maxmemory_policy"],
+		instanceInfo["tcp_port"], instanceInfo["run_id"], instanceInfo["process_id"],
+	)
 
 	if instanceInfo["role"] == "slave" {
 		e.registerConstMetricGauge(ch, "slave_info", 1,
